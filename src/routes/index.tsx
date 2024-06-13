@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 
 import MotorcycleRegistration from "../screens/MotorcycleRegistration";
 import MotorcycleTable from "../screens/MotorcycleTable";
+import MotorcycleEdit from "../screens/MotorcycleEdit";
 
 const RoutesApp = () => {
   return (
@@ -13,7 +14,8 @@ const RoutesApp = () => {
         <Route element={<Layout />}>
           <Route path="/*" element={<Page404 />} />
           <Route path="/" element={<MotorcycleRegistration />} />
-          <Route path="/motorcycle_table" element={<MotorcycleTable />} />
+          <Route path="/table" element={<MotorcycleTable />} />
+          <Route path="/edit" element={<MotorcycleEdit />} />
         </Route>
       </Routes>
     </BrowserRouter>

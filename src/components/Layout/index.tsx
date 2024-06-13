@@ -11,8 +11,11 @@ const Layout: React.FC = () => {
       case '/':
         return 'Registro de Motos';
 
-      case '/motorcycle_table':
+      case '/table':
         return 'Tabela de Motos';
+
+      case '/table':
+        return 'Editar';
 
       default:
         return 'Motoca';
