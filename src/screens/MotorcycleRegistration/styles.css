@@ -38,6 +38,10 @@
   z-index: 1;
 }
 
+#body-motorcycle form option {
+  color: #000;
+}
+
 #body-motorcycle form button[type="submit"] {
   font-size: 1rem;
   font-weight: bolder;
