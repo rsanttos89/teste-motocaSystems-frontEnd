@@ -1,22 +1,46 @@
 import './styles.css';
 import { useEffect, useState } from 'react';
 import { getMotorcycles, Motorcycle } from '../../server/selectIndexedDB';
+import { deleteMotorcycle } from '../../server/deleteIndexedDB';
 
 const MotorcycleTable = () => {
   const [motorcycles, setMotorcycles] = useState<Motorcycle[]>([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchMotorcycles = async () => {
+      setLoading(true);
       const fetchedMotorcycles = await getMotorcycles();
       setMotorcycles(fetchedMotorcycles);
+      setLoading(false);
     };
 
     fetchMotorcycles();
   }, []);
 
+  const handleDelete = async (product_code: string) => {
+    const confirmDelete = window.confirm('Tem certeza que deseja excluir esta moto?');
+
+    if (!confirmDelete) {
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await deleteMotorcycle(product_code);
+      setMotorcycles((prevMotorcycles) =>
+        prevMotorcycles.filter((motorcycle) => motorcycle.product_code !== product_code)
+      );
+    } catch (error) {
+      console.error('Erro ao deletar moto', error);
+    }
+    setLoading(false);
+  };
+
   return (
     <section id='body-MotorcycleTable' className='flex'>
-      {motorcycles.length > 0 ? (
+      {loading && <p>Carregando...</p>}
+      {!loading && motorcycles.length > 0 ? (
         motorcycles.map((motorcycle) => (
           <div key={motorcycle.product_code} className="flex card">
             <span className='txt-id'>#{motorcycle.product_code}</span>
@@ -34,15 +58,18 @@ const MotorcycleTable = () => {
               <button 
                 className='flex material-symbols-outlined'
                 style={{color: '#FF4C51'}}
-              >delete</button>
+                onClick={() => handleDelete(motorcycle.product_code)}
+              >
+                delete
+              </button>
 
               <button className='flex material-symbols-outlined'>visibility</button>
             </div>
           </div>
         ))
-      ) : (
+      ) : !loading ? (
         <p>Nenhuma moto registrada</p>
-      )}
+      ) : null}
     </section>
   );
 };
