@@ -1,4 +1,4 @@
-const version = 'motoca-v1';
+const version = 'motoca-v2';
 
 const resources = [
   '/',
