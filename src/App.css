@@ -1,6 +1,5 @@
 /* IMPORT GOOGLE FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* CSS GLOBAL */
 * {
@@ -25,7 +24,7 @@
 }
 
 html, body, a {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: var(--txt-color);
   font-weight: normal;
   font-style: normal;
@@ -52,4 +51,37 @@ button:hover {
   'wght' 400,
   'GRAD' 0,
   'opsz' 48
+}
+
+/* Estilizando a barra de rolagem inteira */
+::-webkit-scrollbar {
+  width: 3px; /* Largura da barra de rolagem vertical */
+  height: 3px; /* Altura da barra de rolagem horizontal */
+}
+
+/* Estilizando a parte "track" da barra de rolagem */
+::-webkit-scrollbar-track {
+  background: var(--background); /* Cor do fundo do track */
+  border-radius: 10px; /* Borda arredondada do track */
+}
+
+/* Estilizando o "thumb" da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background: var(--background); /* Cor do thumb */
+  border-radius: 10px; /* Borda arredondada do thumb */
+}
+
+/* Estilizando o thumb quando está sendo pressionado (ativo) */
+::-webkit-scrollbar-thumb:active {
+  background: var(--background); /* Cor do thumb ativo */
+}
+
+/* Estilizando o thumb quando está em hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--background); /* Cor do thumb quando o mouse está sobre ele */
+}
+
+/* Estilizando o canto entre as barras de rolagem horizontal e vertical */
+::-webkit-scrollbar-corner {
+  background: var(--background); /* Cor do canto */
 }

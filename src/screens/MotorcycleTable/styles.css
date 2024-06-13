@@ -7,4 +7,49 @@
   justify-content: flex-start;
   padding: 16px;
   overflow: auto;
+  gap: 16px;
+}
+
+#body-MotorcycleTable .card {
+  width: 100%;
+  min-height: 140px;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--card-color);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+#body-MotorcycleTable .card .txt-id {
+  width: 100px;
+  color: blueviolet;
+  text-align: center;
+}
+
+
+#body-MotorcycleTable .card .box-txt {
+  width: 100%;
+  align-items: flex-start;
+  padding: 0px 16px ;
+}
+
+#body-MotorcycleTable .card .box-txt .txt-title {
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+
+#body-MotorcycleTable .card .box-icons {
+  flex-direction: row;
+  gap: 8px;
+}
+
+
+#body-MotorcycleTable .card .box-icons button {
+  color: var(--buttom-color);
+  background-color: transparent;
+  min-height: 40px;
+  max-height: 40px;
+  min-width: 40px;
+  max-width: 40px;
 }
