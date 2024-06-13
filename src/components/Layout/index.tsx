@@ -14,7 +14,7 @@ const Layout: React.FC = () => {
       case '/table':
         return 'Tabela de Motos';
 
-      case '/table':
+      case '/edit':
         return 'Editar';
 
       default:
