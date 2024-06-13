@@ -3,7 +3,7 @@ import './styles.css';
 const MotorcycleRegistration = () => {
   return (
     <section id='body' className='flex'>
-      <h1>MotorcycleRegistration</h1>
+      <h2>Preencha as informações a baixo para registrar uma Moto 🏍️</h2>
     </section>
   );
 }
