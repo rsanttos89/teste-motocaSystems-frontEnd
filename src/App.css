@@ -19,6 +19,8 @@
   --background: #2A233C;
   --txt-color:  #E7E3FC;
   --border-color: #E7E3FC;
+  --bottom-color: #3BADFB;
+  --bottom-txt-color: #E7E3FC;
 }
 
 html, body, a {

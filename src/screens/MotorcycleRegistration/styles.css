@@ -1,0 +1,52 @@
+#body-motorcycle header {
+  margin-bottom: 32px;
+}
+
+#body-motorcycle header h2 {
+  font-size: 1.6rem;
+}
+
+#body-motorcycle form {
+  width: 100%;
+  max-width: 420px;
+}
+
+#body-motorcycle form label {
+  max-width: 420px;
+  padding: 0px 8px;
+  align-self: flex-start;
+  margin-left: 16px;
+  font-size: 13px;
+  background-color: var(--background);
+  text-transform: capitalize;
+  color: var(--txt-color);
+  margin-bottom: -10px;
+  z-index: 2;
+}
+
+#body-motorcycle form input, #body-motorcycle form select {
+  width: 100%;
+  max-width: 420px;
+  color: var(--txt-color);
+  background-color: transparent;
+  border: solid 1px var(--border-color);
+  border-radius: 5px;
+  min-height: 50px;
+  max-height: 50px;
+  margin-bottom: 32px;
+  padding: 0px 12px;
+  z-index: 1;
+}
+
+#body-motorcycle form button[type="submit"] {
+  font-size: 1rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  background-color: var(--bottom-color);
+  color: var(--bottom-txt-color);
+  border-radius: 5px;
+  max-width: 420px;
+  min-height: 50px;
+  max-height: 50px;
+  width: 100%;
+}
