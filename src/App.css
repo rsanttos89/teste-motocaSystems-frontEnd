@@ -1,0 +1,52 @@
+/* IMPORT GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+/* CSS GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  font-size: 100%;
+  object-fit: contain;
+}
+
+:root {
+  --background: #2A233C;
+  --txt-color:  #E7E3FC;
+  --border-color: #E7E3FC;
+}
+
+html, body, a {
+  font-family: 'Roboto', sans-serif;
+  color: var(--txt-color);
+  font-weight: normal;
+  font-style: normal;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.5;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
