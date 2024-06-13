@@ -4,7 +4,7 @@ const MotorcycleEdit = () => {
   return (
     <section id='body-motorcycle' className='flex'>
       <header className="flex">
-        <h2>Preencha as informações a baixo para registrar uma Moto 🏍️</h2>
+        <h2>Edite as informações que preferir! 📝</h2>
       </header>
 
       <form action="" className='flex'>
