@@ -20,8 +20,8 @@
   ],
   "start_url": "/signin",
   "display": "standalone",
-  "theme_color": "#21588a",
-  "background_color": "#21588a",
+  "theme_color": "#2A233C",
+  "background_color": "#2A233C",
   "permissions": [
     "geolocation",
     "notifications"
