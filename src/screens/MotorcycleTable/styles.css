@@ -1,0 +1,10 @@
+#body-MotorcycleTable {
+  margin: 0 auto;
+  width: calc(100% - 16px);
+  height: calc(100vh - 180px);
+  border-top: 1px solid var(--border-color);
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 16px;
+  overflow: auto;
+}

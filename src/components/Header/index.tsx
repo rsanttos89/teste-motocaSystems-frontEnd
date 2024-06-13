@@ -14,8 +14,6 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
       </div>
 
       <h1>{title}</h1>
-
-      <hr />
     </header>
   );
 };

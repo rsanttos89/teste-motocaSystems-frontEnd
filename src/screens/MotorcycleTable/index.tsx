@@ -2,7 +2,7 @@ import './styles.css';
 
 const MotorcycleTable = () => {
   return (
-    <section className='flex'>
+    <section id='body-MotorcycleTable' className='flex'>
       <h1>MotorcycleTable</h1>
     </section>
   );
