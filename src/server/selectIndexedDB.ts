@@ -1,5 +1,4 @@
 export interface Motorcycle {
-  id?: number;
   product_code: string;
   model: string;
   color: string;
@@ -29,7 +28,7 @@ export const getMotorcycles = async (): Promise<Motorcycle[]> => {
     request.onupgradeneeded = (event: any) => {
       const db = event.target.result;
       if (!db.objectStoreNames.contains('motorcycles')) {
-        const objectStore = db.createObjectStore('motorcycles', { keyPath: 'id', autoIncrement: true });
+        const objectStore = db.createObjectStore('motorcycles', { keyPath: 'product_code' });
         objectStore.createIndex('timestamp', 'timestamp', { unique: false });
       }
     };

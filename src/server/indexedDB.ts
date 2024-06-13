@@ -1,11 +1,4 @@
-interface Motorcycle {
-  product_code: string;
-  model: string;
-  color: string;
-  price: string;
-  status: string;
-  timestamp?: string;
-}
+import { Motorcycle } from './selectIndexedDB';
 
 export const saveMotorcycle = async (motorcycle: Motorcycle): Promise<string> => {
   if (!('indexedDB' in window)) {
@@ -28,7 +21,7 @@ export const saveMotorcycle = async (motorcycle: Motorcycle): Promise<string> =>
     request.onupgradeneeded = (event: any) => {
       const db = event.target.result;
       if (!db.objectStoreNames.contains('motorcycles')) {
-        const objectStore = db.createObjectStore('motorcycles', { keyPath: 'id', autoIncrement: true });
+        const objectStore = db.createObjectStore('motorcycles', { keyPath: 'product_code' });
         objectStore.createIndex('timestamp', 'timestamp', { unique: false });
       }
     };

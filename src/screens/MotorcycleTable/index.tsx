@@ -18,8 +18,8 @@ const MotorcycleTable = () => {
     <section id='body-MotorcycleTable' className='flex'>
       {motorcycles.length > 0 ? (
         motorcycles.map((motorcycle) => (
-          <div key={motorcycle.id} className="flex card">
-            <span className='txt-id'>#{motorcycle.id}</span>
+          <div key={motorcycle.product_code} className="flex card">
+            <span className='txt-id'>#{motorcycle.product_code}</span>
 
             <div className='flex box-txt'>
               <span className="txt-title">
