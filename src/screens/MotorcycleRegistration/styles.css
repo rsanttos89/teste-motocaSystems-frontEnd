@@ -1,3 +1,7 @@
+#body-motorcycle {
+  padding: 0px 16px;
+}
+
 #body-motorcycle header {
   margin-bottom: 32px;
 }
@@ -48,6 +52,7 @@
   text-transform: uppercase;
   background-color: var(--bottom-color);
   color: var(--bottom-txt-color);
+  margin-bottom: 32px;
   border-radius: 5px;
   max-width: 420px;
   min-height: 50px;
