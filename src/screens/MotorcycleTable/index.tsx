@@ -52,7 +52,13 @@ const MotorcycleTable = () => {
                 {motorcycle.model} <span className='status'>{motorcycle.status}</span>
               </span>
               
-              <span style={{padding: '8px 0px'}}>Valor: {motorcycle.price}</span>
+              <span style={{padding: '8px 0px'}}>Valor: {
+                parseFloat(motorcycle.price).toLocaleString('pt-br', {
+                  style: 'currency',
+                  currency: 'BRL'
+                })
+              }</span>
+
               <span>Cor: <span style={{textTransform: 'uppercase'}}>{motorcycle.color}</span></span>
             </div>
 
