@@ -2,6 +2,7 @@ import './styles.css';
 import { useEffect, useState } from 'react';
 import { getMotorcycles, Motorcycle } from '../../server/selectIndexedDB';
 import { deleteMotorcycle } from '../../server/deleteIndexedDB';
+import { Link } from 'react-router-dom';
 
 const MotorcycleTable = () => {
   const [motorcycles, setMotorcycles] = useState<Motorcycle[]>([]);
@@ -63,7 +64,7 @@ const MotorcycleTable = () => {
                 delete
               </button>
 
-              <button className='flex material-symbols-outlined'>visibility</button>
+              <Link to={`/edit/${motorcycle.product_code}`} className='flex material-symbols-outlined'>visibility</Link>
             </div>
           </div>
         ))

@@ -15,7 +15,7 @@ const RoutesApp = () => {
           <Route path="/*" element={<Page404 />} />
           <Route path="/" element={<MotorcycleRegistration />} />
           <Route path="/table" element={<MotorcycleTable />} />
-          <Route path="/edit" element={<MotorcycleEdit />} />
+          <Route path="/edit/:product_code" element={<MotorcycleEdit />} />
         </Route>
       </Routes>
     </BrowserRouter>
