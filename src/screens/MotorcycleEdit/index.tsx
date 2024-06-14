@@ -1,10 +1,11 @@
 import { useState, ChangeEvent, FormEvent, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import './styles.css';
 import { saveMotorcycle } from '../../server/indexedDBUpdate';
 
 const MotorcycleEdit = () => {
+  const navigate = useNavigate();
   const { product_code, model, status, price, color } = useParams();
   
   const [formData, setFormData] = useState({
@@ -35,6 +36,7 @@ const MotorcycleEdit = () => {
         status: 'em_estoque',
       });
       setIsEditing(false);
+      navigate('/table');
     } catch (error) {
       alert('Erro ao registrar a moto');
     }
