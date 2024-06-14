@@ -23,6 +23,22 @@
   font-size: 1.5rem;
   font-weight: bolder;
   text-transform: capitalize;
-  align-self: flex-start;
+}
+
+#topbar .box {
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#topbar .button {
+  font-size: 1rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  background-color: var(--bottom-color);
+  color: var(--bottom-txt-color);
   margin-bottom: 32px;
+  border-radius: 5px;
+  padding: 4px 32px;
 }

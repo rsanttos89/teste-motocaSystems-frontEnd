@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 interface HeaderProps {
   title: string;
@@ -13,7 +14,10 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
         <button className='material-symbols-outlined'>account_circle</button>
       </div>
 
-      <h1>{title}</h1>
+      <div className="flex box">
+        <h1>{title}</h1>
+        <Link to={'/'} className='flex button'>+ novo registro</Link>
+      </div>
     </header>
   );
 };
