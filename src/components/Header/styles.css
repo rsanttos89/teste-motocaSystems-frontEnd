@@ -1,5 +1,6 @@
 #topbar {
   width: 100%;
+  margin-bottom: 32px;
 }
 
 #topbar .box-icons {
@@ -38,7 +39,6 @@
   text-transform: uppercase;
   background-color: var(--bottom-color);
   color: var(--bottom-txt-color);
-  margin-bottom: 32px;
   border-radius: 5px;
   padding: 4px 32px;
 }
