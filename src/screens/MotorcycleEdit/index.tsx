@@ -1,8 +1,11 @@
 import './styles.css';
 import { useState, ChangeEvent, FormEvent, useEffect } from 'react';
 import { saveMotorcycle } from '../../server/indexedDBUpdate';
+import { useParams } from 'react-router-dom';
 
 const MotorcycleEdit = () => {
+  const { product_code, model, status, price, color } = useParams();
+  
   const [formData, setFormData] = useState({
     product_code: '',
     model: '',
@@ -36,16 +39,14 @@ const MotorcycleEdit = () => {
     }
   };
 
-  // Simulating fetching data for editing, you can replace this with actual data fetching logic
   useEffect(() => {
     const fetchDataForEdit = async () => {
-      // Dummy data for illustration, replace with actual data fetching logic
       const motorcycleToEdit = {
-        product_code: '12345',
-        model: 'Model X',
-        color: 'Red',
-        price: '15000',
-        status: 'em_estoque',
+        product_code: product_code || '',
+        model: product_code || '',
+        color: model || '',
+        price: price || '',
+        status: status || '',
       };
 
       if (motorcycleToEdit) {

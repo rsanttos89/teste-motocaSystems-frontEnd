@@ -6,11 +6,11 @@ const Page404 = () => {
   };
 
   return (
-    <main id='page404' className='flex'>
+    <section id='page404' className='flex'>
       <h1>404</h1>
       <p>Whoops...</p>
       <button onClick={handleReturn}>return</button>
-    </main>
+    </section>
   );
 }
 

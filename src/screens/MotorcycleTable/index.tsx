@@ -64,7 +64,10 @@ const MotorcycleTable = () => {
                 delete
               </button>
 
-              <Link to={`/edit/${motorcycle.product_code}`} className='flex material-symbols-outlined'>visibility</Link>
+              <Link 
+                to={`/edit/${motorcycle.product_code}/${motorcycle.model}/${motorcycle.status}/${motorcycle.price}/${motorcycle.color}`} 
+                className='flex material-symbols-outlined'
+              >visibility</Link>
             </div>
           </div>
         ))

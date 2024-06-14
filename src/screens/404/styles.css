@@ -1,0 +1,16 @@
+#page404 {
+  height: calc(100% - 200px);
+  border-top: solid 1px var(--border-color);
+}
+
+#page404 button {
+  font-size: 1rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  background-color: var(--bottom-color);
+  color: var(--bottom-txt-color);
+  margin-bottom: 32px;
+  border-radius: 5px;
+  padding: 8px 32px;
+  margin-top: 16px;
+}
