@@ -1,8 +1,9 @@
-import './styles.css';
 import { useEffect, useState } from 'react';
-import { getMotorcycles, Motorcycle } from '../../server/selectIndexedDB';
-import { deleteMotorcycle } from '../../server/deleteIndexedDB';
 import { Link } from 'react-router-dom';
+
+import './styles.css';
+import { deleteMotorcycle } from '../../server/deleteIndexedDB';
+import { getMotorcycles, Motorcycle } from '../../server/selectIndexedDB';
 
 const MotorcycleTable = () => {
   const [motorcycles, setMotorcycles] = useState<Motorcycle[]>([]);

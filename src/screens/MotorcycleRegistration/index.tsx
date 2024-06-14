@@ -1,5 +1,6 @@
-import './styles.css';
 import { useState, ChangeEvent, FormEvent } from 'react';
+
+import './styles.css';
 import { saveMotorcycle } from '../../server/indexedDB';
 
 const MotorcycleRegistration = () => {

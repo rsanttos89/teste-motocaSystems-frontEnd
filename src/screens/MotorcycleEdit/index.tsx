@@ -1,7 +1,8 @@
-import './styles.css';
 import { useState, ChangeEvent, FormEvent, useEffect } from 'react';
-import { saveMotorcycle } from '../../server/indexedDBUpdate';
 import { useParams } from 'react-router-dom';
+
+import './styles.css';
+import { saveMotorcycle } from '../../server/indexedDBUpdate';
 
 const MotorcycleEdit = () => {
   const { product_code, model, status, price, color } = useParams();
