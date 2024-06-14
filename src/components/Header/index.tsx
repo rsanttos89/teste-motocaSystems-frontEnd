@@ -22,6 +22,10 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
 
         {showSearchBox && (
           <div id='box-search' className="flex">
+            <form className="flex">
+              <span className='flex material-symbols-outlined'>search</span>
+              <input type='search' name='search' id="search" placeholder='Buscar por código, nome e cor' />
+            </form>
             <Link to={'/'} className='flex button'>+ novo registro</Link>
           </div>
         )}

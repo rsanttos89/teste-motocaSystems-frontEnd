@@ -38,8 +38,35 @@
   font-size: 1rem;
   font-weight: bolder;
   text-transform: uppercase;
+  white-space: nowrap;
   background-color: var(--bottom-color);
   color: var(--bottom-txt-color);
   border-radius: 5px;
   padding: 4px 32px;
+  height: 35px;
+}
+
+#box-search {
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 16px;
+}
+
+#box-search form {
+  height: 35px;
+  flex-direction: row;
+  border-radius:  5px;
+  justify-content: flex-start;
+  border: solid 1px var(--border-color);
+  padding: 4px 32px;
+}
+
+#box-search form span {
+  padding: 4px 0px;
+  margin-right: 32px;
+}
+
+#box-search input {
+  background-color: transparent;
+  height: 35px;
 }
