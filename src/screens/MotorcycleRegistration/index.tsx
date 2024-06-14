@@ -1,9 +1,11 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import './styles.css';
 import { saveMotorcycle } from '../../server/indexedDB';
 
 const MotorcycleRegistration = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     product_code: '',
     model: '',
@@ -22,13 +24,19 @@ const MotorcycleRegistration = () => {
     try {
       await saveMotorcycle(formData);
       alert('Moto registrada com sucesso!');
-      setFormData({
-        product_code: '',
-        model: '',
-        color: '',
-        price: '',
-        status: 'em_estoque',
-      });
+  
+      const registerAnother = window.confirm('Deseja registrar outra moto?');
+      if (registerAnother) {
+        setFormData({
+          product_code: '',
+          model: '',
+          color: '',
+          price: '',
+          status: 'em_estoque',
+        });
+      } else {
+        navigate('/table'); // Redireciona para a página /table
+      }
     } catch (error) {
       alert('Erro ao registrar a moto');
     }
