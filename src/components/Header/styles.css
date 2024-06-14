@@ -10,7 +10,7 @@
   gap: 8px;
 }
 
-#topbar .box-icons button {
+#topbar .box-icons .btn-icons {
   font-size: 2rem;
   color: var(--txt-color);
   background-color: transparent;
