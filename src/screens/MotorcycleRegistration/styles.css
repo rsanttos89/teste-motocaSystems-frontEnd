@@ -1,3 +1,7 @@
+#box-search {
+  display: flex;
+}
+
 #body-motorcycle {
   border-top: 1px solid var(--border-color);
 }
