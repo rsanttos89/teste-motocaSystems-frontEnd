@@ -14,15 +14,37 @@ const MotorcycleRegistration = () => {
     status: 'em_estoque',
   });
 
+  const formatPrice = (value: string) => {
+    const numberValue = value.replace(/\D/g, '');
+    const formattedValue = new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    }).format(Number(numberValue) / 100);
+    return formattedValue;
+  };
+
+  const parsePrice = (value: string) => {
+    const parsedValue = value.replace(/[^\d,]/g, '').replace(',', '.');
+    return parsedValue;
+  };
+
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
+    if (id === 'price') {
+      setFormData({ ...formData, [id]: formatPrice(value) });
+    } else {
+      setFormData({ ...formData, [id]: value });
+    }
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      await saveMotorcycle(formData);
+      const formattedFormData = {
+        ...formData,
+        price: parsePrice(formData.price),
+      };
+      await saveMotorcycle(formattedFormData);
       alert('Moto registrada com sucesso!');
   
       const registerAnother = window.confirm('Deseja registrar outra moto?');
