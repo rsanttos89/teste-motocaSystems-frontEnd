@@ -18,24 +18,38 @@ const MotorcycleEdit = () => {
 
   const [isEditing, setIsEditing] = useState(false);
 
+  const formatPrice = (value: string) => {
+    const numberValue = value.replace(/\D/g, '');
+    const formattedValue = new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    }).format(Number(numberValue) / 100);
+    return formattedValue;
+  };
+
+  const parsePrice = (value: string) => {
+    const parsedValue = value.replace(/[^\d,]/g, '').replace(',', '.');
+    return parsedValue;
+  };
+
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
+    if (id === 'price') {
+      setFormData({ ...formData, [id]: formatPrice(value) });
+    } else {
+      setFormData({ ...formData, [id]: value });
+    }
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      await saveMotorcycle(formData);
+      const formattedFormData = {
+        ...formData,
+        price: parsePrice(formData.price),
+      };
+      await saveMotorcycle(formattedFormData);
       alert(isEditing ? 'Moto atualizada com sucesso!' : 'Moto registrada com sucesso!');
-      setFormData({
-        product_code: '',
-        model: '',
-        color: '',
-        price: '',
-        status: 'em_estoque',
-      });
-      setIsEditing(false);
       navigate('/table');
     } catch (error) {
       alert('Erro ao registrar a moto');
@@ -46,8 +60,8 @@ const MotorcycleEdit = () => {
     const fetchDataForEdit = async () => {
       const motorcycleToEdit = {
         product_code: product_code || '',
-        model: product_code || '',
-        color: model || '',
+        model: model || '',
+        color: color || '',
         price: price || '',
         status: status || '',
       };
@@ -75,7 +89,7 @@ const MotorcycleEdit = () => {
           value={formData.product_code}
           onChange={handleChange}
           required
-          disabled={isEditing} // Código não pode ser alterado durante a edição
+          disabled={isEditing}
         />
 
         <label htmlFor="model">Modelo da Moto</label>
